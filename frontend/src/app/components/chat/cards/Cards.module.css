@@ -1,0 +1,529 @@
+/**
+ * Chat Cards Styles
+ * Premium Linear-inspired dark UI with smooth animations
+ */
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated {
+  animation: slideInUp 0.4s ease;
+}
+
+/* ============================================================================
+   ANSWER CARD
+   ============================================================================ */
+
+.answerCard {
+  padding: 16px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.answerContent {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+
+.answerText {
+  margin: 0 0 12px;
+}
+
+.answerText:last-child {
+  margin-bottom: 0;
+}
+
+.answerContent code {
+  background: #1f2937;
+  color: #667eea;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.answerContent strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.answerContent em {
+  font-style: italic;
+  color: #9ca3af;
+}
+
+/* ============================================================================
+   SQL CODE CARD
+   ============================================================================ */
+
+.sqlCard {
+  background: #111111;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sqlHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #0b0b0b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sqlLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sqlActions {
+  display: flex;
+  gap: 8px;
+}
+
+.actionBtn {
+  padding: 6px 12px;
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtn:hover {
+  background: rgba(102, 126, 234, 0.2);
+  border-color: rgba(102, 126, 234, 0.4);
+}
+
+.actionBtn:active {
+  transform: scale(0.95);
+}
+
+.sqlCode {
+  padding: 16px;
+  margin: 0;
+  overflow-x: auto;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+.sqlCode code {
+  background: transparent;
+}
+
+.keyword {
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.string {
+  color: #34d399;
+}
+
+.number {
+  color: #fbbf24;
+}
+
+.comment {
+  color: #6b7280;
+  font-style: italic;
+}
+
+/* SQL Scrollbar */
+.sqlCode::-webkit-scrollbar {
+  height: 6px;
+}
+
+.sqlCode::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.sqlCode::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 3px;
+}
+
+.sqlCode::-webkit-scrollbar-thumb:hover {
+  background: #6b7280;
+}
+
+/* ============================================================================
+   EXPLANATION CARD
+   ============================================================================ */
+
+.explanationCard {
+  padding: 16px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.explanationTitle {
+  margin: 0 0 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f3f4f6;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.step {
+  padding: 12px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.step:hover {
+  border-color: #667eea;
+  background: #181818;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.stepNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepContent {
+  flex: 1;
+}
+
+.stepTitle {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stepDescription {
+  margin: 0;
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.5;
+}
+
+.expandBtn {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.expandBtn:hover {
+  color: #667eea;
+}
+
+.expandBtn.expanded {
+  transform: rotate(180deg);
+  color: #667eea;
+}
+
+.stepDetails {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  animation: fadeIn 0.3s ease;
+}
+
+.detailsList {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.detailsList li {
+  margin-bottom: 8px;
+}
+
+.detailsList li:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================================
+   RESULT TABLE CARD
+   ============================================================================ */
+
+.resultCard {
+  padding: 16px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.resultTitle {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f3f4f6;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.tableContainer {
+  overflow-x: auto;
+  margin-bottom: 12px;
+}
+
+.resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.tableHeader {
+  padding: 10px 12px;
+  background: #1b1b1b;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  color: #d1d5db;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tableCell {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #d1d5db;
+  font-family: 'Monaco', 'Courier New', monospace;
+}
+
+.resultTable tbody tr:hover .tableCell {
+  background: #181818;
+}
+
+.evenRow .tableCell {
+  background: #101010;
+}
+
+.resultTable tbody tr:hover .tableCell {
+  background: #171717;
+}
+
+.null {
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.boolean {
+  color: #667eea;
+  font-weight: 600;
+}
+
+.number {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.noResults {
+  padding: 24px 12px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+}
+
+.resultInfo {
+  margin: 0;
+  padding: 8px 12px;
+  background: #0d0d0d;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 8px 8px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ============================================================================
+   SUGGESTED PROMPTS CARD
+   ============================================================================ */
+
+.suggestionsCard {
+  padding: 16px;
+  background: #111111;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.suggestionsTitle {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f3f4f6;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.suggestionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.suggestionItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.suggestionItem:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: transparent;
+  color: white;
+}
+
+.suggestionText {
+  flex: 1;
+  font-size: 13px;
+  color: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.suggestionArrow {
+  margin-left: 12px;
+  font-size: 14px;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+}
+
+.suggestionItem:hover .suggestionArrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* ============================================================================
+   RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .answerCard,
+  .sqlCard,
+  .explanationCard,
+  .resultCard,
+  .suggestionsCard {
+    margin-bottom: 10px;
+  }
+
+  .sqlCard {
+    font-size: 12px;
+  }
+
+  .answerCard,
+  .answerText {
+    font-size: 13px;
+  }
+
+  .tableContainer {
+    font-size: 12px;
+  }
+
+  .tableHeader,
+  .tableCell {
+    padding: 8px 10px;
+  }
+
+  .actionBtn {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stepHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .expandBtn {
+    align-self: flex-start;
+    margin-left: 28px;
+  }
+
+  .tableContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .suggestionItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .suggestionArrow {
+    margin-left: 0;
+  }
+}

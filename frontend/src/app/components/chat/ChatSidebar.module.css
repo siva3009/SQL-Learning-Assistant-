@@ -1,0 +1,230 @@
+/**
+ * Chat Sidebar Styles
+ * Premium Linear-style design system
+ */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.header {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #fff 0%, #e0d7ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* New Chat Button */
+.newChatBtn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.newChatBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.newChatBtn:active {
+  transform: scale(0.98);
+}
+
+.icon {
+  font-size: 16px;
+}
+
+/* Search Bar */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 12px 16px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.searchContainer:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.searchIcon {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.searchInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 13px;
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Sections */
+.historySection,
+.workspaceSection {
+  flex: 1;
+  overflow-y: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.historySection {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionTitle {
+  margin: 12px 16px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.7;
+}
+
+.chatList {
+  padding: 0 8px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.emptyState {
+  padding: 20px 16px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.emptyState p {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.emptyState span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* Workspace Navigation */
+.workspaceNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.navItem.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-weight: 600;
+}
+
+/* Scrollbar */
+.chatList::-webkit-scrollbar,
+.historySection::-webkit-scrollbar,
+.workspaceNav::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chatList::-webkit-scrollbar-track,
+.historySection::-webkit-scrollbar-track,
+.workspaceNav::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.chatList::-webkit-scrollbar-thumb,
+.historySection::-webkit-scrollbar-thumb,
+.workspaceNav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+}
+
+.chatList::-webkit-scrollbar-thumb:hover,
+.historySection::-webkit-scrollbar-thumb:hover,
+.workspaceNav::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .header {
+    flex: 0 0 auto;
+  }
+
+  .historySection,
+  .workspaceSection {
+    flex: 1;
+  }
+
+  .sectionTitle {
+    display: none;
+  }
+
+  .chatList {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .workspaceNav {
+    flex-direction: row;
+  }
+}
